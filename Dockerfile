@@ -1,0 +1,21 @@
+FROM node:lts-slim
+
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=3030
+
+ENV MYSQL_HOST=
+ENV MYSQL_PORT=
+ENV MYSQL_USER=
+ENV MYSQL_PASSWORD=
+ENV MYSQL_DBNAME=
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci
+
+COPY . .
+
+CMD ["npm","start"]
