@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:lts-alpine
 
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
